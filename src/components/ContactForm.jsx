@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useId } from "react";
 import { Link } from "react-router-dom";
 import "../styles/ContactForm.css";
 
@@ -19,6 +19,8 @@ function ContactForm() {
     setSubmitted(true);
   };
 
+  const id = useId();
+
   return (
     <>
       {/* If the form is not yet submitted it renders the form */}
@@ -26,31 +28,31 @@ function ContactForm() {
         <form onSubmit={handeSubmit}>
           <fieldset>
             <legend>Contact Information</legend>
-            <label htmlFor="contact-name">Name</label>
+            <label htmlFor={id + "-name"}>Name</label>
             <input
               type="text"
               value={name}
-              id="contact-name"
+              id={id + "-name"}
               name="contact-name"
               required
               onChange={(e) => setName(e.target.value)}
             />
 
-            <label htmlFor="contact-email">Email</label>
+            <label htmlFor={id + "-email"}>Email</label>
             <input
               type="email"
               value={email}
-              id="contact-email"
+              id={id + "-email"}
               name="contact-email"
               required
               onChange={(e) => setEmail(e.target.value)}
             />
 
-            <label htmlFor="contact-message">Message</label>
+            <label htmlFor={id + "-message"}>Message</label>
             <textarea
               value={message}
+              id={id + "-message"}
               name="contact-message"
-              id="contact-message"
               rows={6}
               required
               onChange={(e) => setMessage(e.target.value)}
@@ -60,7 +62,7 @@ function ContactForm() {
         </form>
       ) : (
         // Once the user submits the form and the handeSubmit function updates the state it renders a thank you message instead.
-        <section className="thank-you">
+        <section className="thank-you-section">
           <h2>Thank you for your message!</h2>
           <p>I will get back to you shortly.</p>
           <Link to="/">

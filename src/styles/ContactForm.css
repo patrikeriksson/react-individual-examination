@@ -15,9 +15,9 @@ textarea {
   border: none;
   border-radius: 0.25rem;
   padding: 0.75rem;
-  /* &:focus {
-    border: 5px solid #76abae;
-  } */
+  &:focus {
+    outline: 3px solid #76abae;
+  }
 }
 
 textarea {
@@ -37,4 +37,13 @@ button {
   border: none;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
+}
+
+.thank-you-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  & p {
+    margin-bottom: 2rem;
+  }
 }

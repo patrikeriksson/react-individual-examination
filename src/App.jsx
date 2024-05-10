@@ -4,33 +4,32 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
+import ThemeProvider from "./features/ThemeProvider";
 
 function App() {
   // För G:
-  // React Redux?!?
   // README-fil
-  // Props?
-  // Kanske göra ett object (const) med data, skicka datan till "/" (med props)
 
-  // För VG:
-  // "useContext" för theme
-  // ev. använda react forms eller vad det hette för kontaktformuläret
-
-  // Kanske göra en knapp komponent
+  // TODO (later...)
+  // Hamburger menu for mobile
+  // Imporve the styling
+  // Turn the button into a component, if I need more buttons
 
   const [repos, setRepos] = useState([]);
 
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<About />} />
-        <Route
-          path="/projects"
-          element={<Projects repos={repos} setRepos={setRepos} />}
-        />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <ThemeProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<About />} />
+          <Route
+            path="/projects"
+            element={<Projects repos={repos} setRepos={setRepos} />}
+          />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </ThemeProvider>
     </>
   );
 }
