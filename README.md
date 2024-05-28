@@ -5,7 +5,7 @@ A SPA (Single-page application) school project created using React. It uses gith
 # 2 hooks we did not cover in the course
 ### useId
 >
-> "useId is a React Hook for generating unique IDs that can be passed to accessibility attributes." - React documentation > <br>
+> "useId is a React Hook for generating unique IDs that can be passed to accessibility attributes." - React documentation <br>
 >
 I used it to generate a shared prefix for related elements in my contact form. <br>
 Not entirely necessary for such a simple form, but I thought it was a good opportunity to try it out. 
