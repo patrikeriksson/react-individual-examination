@@ -3,12 +3,12 @@
 A SPA (Single-page application) school project created using React. It uses githubs API to showcase my projects and has a simple contact form to make it easy for users to contact me. (Contact form is not actually functional yet.)
 
 # 2 hooks we did not cover in the course
-###useId
+### useId
 "useId is a React Hook for generating unique IDs that can be passed to accessibility attributes." - React documentation
 I used it to generate a shared prefix for related elements in my contact form.
 Not entirely necessary for such a simple form, but I thought it was a good opportunity to try it out.
 
-###useEffect
+### useEffect
 I used useEffect to fetch my repos from the GitHub API.
 The useEffect hook is ideal for performing side effects like data fetching after the initial render of a component. 
 In this case, fetching repository data from the GitHub API fits perfectly as a side effect.
